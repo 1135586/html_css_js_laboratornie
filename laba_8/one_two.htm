@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML>
+   <HEAD>
+      <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-8">
+   </HEAD>
+   <BODY BGCOLOR="white" TEXT="black" LINK="blue" ALINK="red" VLINK="green">
+      <!-- head file -->
+      <div class="center">
+         <FORM ACTION="http://intranet/local" METHOD=POST>
+            <p style="font-size: 18px"><b>Выбирайте элемент:</b></p>
+            </BR>
+            <div>
+               <span>Номер картинки</span></BR>
+               <select name="pic">
+                  <option selected="1">1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+               </select>
+            </div>
+            <div style="padding-top: 1em; ">
+               <span>Номер фрейма</span></BR>
+               <select name="frame">
+                  <option selected="1">1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+               </select>
+            </div>
+            <P><INPUT TYPE="button" VALUE="Сопоставить" 
+               OnClick="
+               window.top.frames[this.form.frame.value - 1 ].location.href = frame_to_file_map[this.form.pic.value - 1];
+               ">
+         </FORM>
+      </div>
+      <script>
+         var frame_to_file_map = ["r1.gif", "r2.gif", "r3.gif", "r4.gif"];
+      </script>
+      <style>
+         .center{
+         padding-left: 16px;
+         padding-top: 2px;
+         }
+         body{
+         background: #ceceef;
+         }
+      </style>
+   </BODY>
+</HTML>
